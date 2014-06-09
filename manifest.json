@@ -1,0 +1,27 @@
+{  
+  "name": "微群发",  
+  "version": "0.2",
+  "manifest_version": 2,  
+  "description": "微信群发工具",  
+  "browser_action": {  
+    "default_icon": "icon.png" ,
+    "default_title": "微群发"
+  },
+  "permissions": [
+  	"http://*/*", 
+  	"https://*/*",
+  	"webRequest",
+	"webRequestBlocking",
+	"storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mp.weixin.qq.com/cgi-bin/contactmanage*"],
+      "js": ["jquery-1.10.2.min.js", "wechat.min.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["bg.min.js"],
+    "persistent": true
+  }
+ } 
